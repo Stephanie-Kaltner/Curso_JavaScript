@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.2.6</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Ejercicio M7.2.6</h1>
+      <p class="parrafo">
+        El usuario debe introducir números hasta que introduzca un número
+        primo.<br />
+        En el momento que el usuario introduzca un número primo, el programa
+        debe sacar por pantalla el siguiente mensaje:
+        <b>¡Exacto, el número “x” es primo!</b><br />
+        <i
+          >Nota: Utilizar el método creado en el ejercicio: (M7.2.) Ejercicio
+          5</i
+        >
+      </p>
+      <hr />
+    </div>
+
+    <div>
+      <p style="margin-top: 35px; margin-bottom: 20px">
+        <b>Averigua si el número es primo o no</b>
+      </p>
+      <button onClick="primoNum()">Mostrar</button>
+      <p class="resultado">
+        <b><span id="resultado"></span></b>
+      </p>
+    </div>
+
+    <script>
+      function esPrimo(numero) {
+        for (i = 2; i < numero; i++) {
+          if (numero % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function primoNum() {
+        let numero = 0;
+        let newNumber = false;
+        do {
+          numero = Number(
+            prompt("Ingrese un número para saber si es primo o no")
+          );
+
+          if (esPrimo(numero)) {
+            alert(`¡Exacto, el número ${numero} es primo!`);
+          }
+        } while (!esPrimo(numero));
+      }
+
+      //Generar el random = numeroRandom
+      //usar el do while
+      //intento = 1
+      /* do {
+        preguntar por numeroUsuario
+        si (numeroUsuario != numeroRandom)
+        si no sale: numero incorrecto
+        intento++
+        }while (numeroUsuario != numeroRandom && intento<5);
+        si sale: numero correcto
+        */
+    </script>
+  </body>
+</html>
