@@ -1,0 +1,40 @@
+body{
+    padding: 20px 0 0 40px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.parrafo {
+font-size: 16px;
+line-height: 20px;
+}
+
+hr {
+    color: #000;
+    border: 1px solid #000;
+}
+
+.datos {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 45px;
+    margin-bottom: 30px;
+
+}
+.resultado {
+    margin-left: 10px;
+    font-size: 16px;
+    margin-top: 30px;
+    font-weight: 500;
+}
+button {
+    background: #22A0B8;
+    color: #ffff;
+    border-color: #22A0B8;
+    padding: 6px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+}

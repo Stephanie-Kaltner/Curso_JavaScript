@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.2.5</title>
+</head>
+
+<body>
+    <div>
+        <h1><b>Ejercicio M7.2.5</b></h1>
+        <p>El usuario introduce un número por teclado y el programa llama a un método que indique si el número es primo o no.</p>
+    </div>
+    <hr>
+
+    <div>
+        <p class="datos">Introduzca un número para saber si es primo o no: <input type="number" id="numbers" min="0"> </p>
+        <button onClick="primoNum()">Imprimir</button>
+        <p class="resultado"><b><span id="resultado"></span></b></p>
+    </div>
+
+    <script>
+        function primoNum () {
+            let newNumber = true;
+            newNumber = (document.getElementById("numbers").value);
+            for (i = 2; i < newNumber; i++) {
+                if (newNumber % i === 0) {
+                    primoNum = false;
+                    i = newNumber;
+                }
+            }
+            if (!primoNum) {
+                document.getElementById("resultado").innerHTML = `El número introducido ${newNumber} no es primo.`;
+            } else {
+                document.getElementById("resultado").innerHTML = `El número introducido ${newNumber} es primo.`;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
