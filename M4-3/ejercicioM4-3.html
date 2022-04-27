@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio M4.3</title>
+</head>
+
+<body style="padding: 20px 0 0 30px;">
+    <div>
+        <h1><b>Ejercicio M4.3</b></h1>
+        <p>Una escuela de idiomas concede becas a futuros estudiantes si cumplen con una serie de requisitos. Al alumno se le asigna una beca si es mayor de edad y tiene un título universitario. O también se le asigna una beca si el alumno está en paro. El programa solicita los tres datos por pantalla y al finalizar muestra si el alumno tiene la beca o no.
+        </p>
+    </div>
+    <hr>
+
+    <p>Nombre y apellido: <input id="nombre" type="text" size="60"></p>
+    <p>Edad: <input id="edad" type="number" size="10"></p>
+
+    <p>¿Tienes título universitario?
+        <input type="radio" id="si" value="s" name="uni" checked />
+        <label for="si">Si</label>
+        <input type="radio" id="no" value="n" name="uni" checked />
+        <label for="no">No</label>
+    </p>
+    <p>¿Estás en el paro?
+        <input type="radio" id="paro1" value="a" name="paro" checked />
+        <label for="si">Si</label>
+        <input type="radio" id="paro2" value="b" name="paro" checked />
+        <label for="no">No</label>
+    </p>
+
+    <p><button onClick="beca()">Resultado</button></p>
+    <p>Resultado de la beca: <span id="respuesta"></span></p>
+
+    <script>
+        function beca () {
+            //Rellenar los datos
+            let nombre = document.getElementById("nombre").value;
+            let edad = Number(document.getElementById("edad").value);
+            let titulo = document.getElementById("si").checked;
+            let paro = document.getElementById("paro1").checked;
+            let respuesta = "";
+
+            //Saber si se tiene o no la beca
+            if (edad >= 18) {
+                if (titulo || paro) {
+                    respuesta = " tienes beca";
+                } else {
+                    respuesta = " no tienes beca";
+                }
+            } else if (edad < 18 && edad >= 16 && paro) {
+                respuesta = " tienes beca";
+            } else {
+                respuesta = " no tienes beca";
+            }
+            //Mostrar el resultado
+            document.getElementById("respuesta").innerHTML = nombre + respuesta;
+        }
+
+    </script>
+</body>
+
+</html>
