@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M4.6</title>
+</head>
+
+<body>
+    <div>
+        <h1><b>Ejercicio M4.6</b></h1>
+        <p>Hacer un programa que solicite al usuario qué día y qué mes nació, con esta información el programa muestra por pantalla, de qué signo del zodiaco es.
+            <li>Aries-Aries (21.03 — 19.04)</li>
+            <li>Tauro-Tauro (20.04 — 20.05)</li>
+            <li>Gemelos-Géminis (21.05 — 20.06)</li>
+            <li>Cangrejo-Cáncer (21.06 — 22.07)</li>
+            <li>León-Leo (23.07 — 22.08)</li>
+            <li>Virgen-Virgo (23.08 - 22.09)</li>
+            <li>Libra-Libra (23.09 — 22.10)</li>
+            <li>Escorpio-Escorpio (23.10 — 21.11)</li>
+            <li>Sagitario-Sagitario (22.11 — 21.12)</li>
+            <li>Capricornio-Capricornio (22.12 — 19.01)</li>
+            <li>Acuario-Acuario (20.01 — 18.02)</li>
+            <li>Peces-Piscis (19.02 — 20.03)</li>
+        </p>
+    </div>
+    <hr>
+    <div>
+        <p><label for="dia">Escribe tu día de nacimiento: </label><input id="dia" type="number" min="1" max="33" size="6"></p>
+        <p><label for="mes">Escribe tu mes de nacimiento: </label><input id="mes" type="number" min="1" max="33" size="6"></p>
+        <p><input class="button" type="button" onClick="mostrar()" value="mostrar signo de zodiaco"></p>
+        <p id="signo"></p>
+        <img src="img/none.png" id="imgSigno">
+    </div>
+
+    <script>
+        function mostrar () {
+            "use strict"; //Para definir las variables
+            let varDia, varMes, varSigno, varImg; //Definimos las variables
+            varMes = Number(document.getElementById("mes").value);
+            varDia = Number(document.getElementById("dia").value);
+            varSigno = document.getElementById("signo").value;
+
+            //Escribimos los casos de los signos
+            switch (varMes) {
+                case 1:
+                    varSigno = (varDia <= 19) ? "Capricornio" : "Acuario";
+                    break;
+                case 2:
+                    varSigno = (varDia <= 18) ? "Acuario" : "Piscis";
+                    break;
+                case 3:
+                    varSigno = (varDia <= 20) ? "Piscis" : "Aries";
+                    break;
+                case 4:
+                    varSigno = (varDia <= 21) ? "Aries" : "Tauro";
+                    break;
+                case 5:
+                    varSigno = (varDia <= 20) ? "Tauro" : "Geminis";
+                    break;
+                case 6:
+                    varSigno = (varDia <= 20) ? "Geminis" : "Cancer";
+                    break;
+                case 7:
+                    varSigno = (varDia <= 22) ? "Cancer" : "Leo";
+                    break;
+                case 8:
+                    varSigno = (varDia <= 22) ? "Leo" : "Virgo";
+                    break;
+                case 9:
+                    varSigno = (varDia <= 22) ? "Virgo" : "Libra";
+                    break;
+                case 10:
+                    varSigno = (varDia <= 22) ? "Libra" : "Escorpion";
+                    break;
+                case 11:
+                    varSigno = (varDia <= 21) ? "Escorpion" : "Sagitario";
+                    break;
+                case 12:
+                    varSigno = (varDia <= 21) ? "Sagitario" : "Capricornio";
+                    break;
+            }
+            varImg = `img/${varSigno}.png`;
+            //Mostrar el resultado del parrafo con id signo
+            document.getElementById("signo").innerHTML = `Tu signo del zodíaco es: <b> ${varSigno} </b>`;
+            //Mostrar la imagen con id img
+            document.getElementById("imgSigno").src = varImg;
+        }
+
+    </script>
+</body>
+
+</html>
