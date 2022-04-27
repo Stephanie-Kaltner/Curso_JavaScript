@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio M4.2</title>
+</head>
+
+<body style="padding: 20px 0 0 30px;">
+    <div>
+        <h1><b>Ejercicio M4.2</b></h1>
+        <p>Este programa le pide la edad al usuario, en función de ésta, mostraremos uno de los siguientes mensajes por pantalla:
+            <ul>
+                <li>Si tiene 5 años o menos: preescolar</li>
+                <li>Si tiene entre 6 y 11 años: primaria</li>
+                <li>Si tiene entre 12 y 15: ESO</li>
+                <li>Si tiene entre 16 y 17: Bachillerato</li>
+                <li>Si es mayor de edad: FP o Universidad</li>
+            </ul>
+        </p>
+    </div>
+    <hr>
+    <div>
+        <h3 style="margin-top: 50px;">¿Que estudios tienes?</h3>
+        <div style="margin-left: 20px;">
+            <p>Edad: <input type="number" min="0" max="99" id="edad" /></p>
+
+            <p><button style="background: #22A0B8; color: #ffff; border-color: #22A0B8;" onClick="estudios()">Averiguar</button></p>
+            <p id="mensaje"></p>
+        </div>
+    </div>
+    <script>
+        function estudios () {
+            //leer la edad
+            let edad = Number(document.getElementById("edad").value);
+            // si eres igual o menor de 5 años
+            if (edad <= 5) {
+                document.getElementById("mensaje").innerHTML = " eres de preescolar";
+            }
+            // sino, si tienes entre 6 y 11 años
+            else if (edad >= 6 && edad <= 11) {
+                document.getElementById("mensaje").innerHTML = " eres de primaria"
+            } // sino, si tienes entre 12 y 15 años
+            else if (edad >= 12 && edad <= 15) {
+                document.getElementById("mensaje").innerHTML = " eres de ESO"
+            } // sino, si tienes entre 16 y 17 años
+            else if (edad >= 16 && edad <= 17) {
+                document.getElementById("mensaje").innerHTML = " eres de Bachillerato"
+            } // sino, si tienes más de 18 años
+            else {
+                document.getElementById("mensaje").innerHTML = " eres de FP o Universidad"
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
