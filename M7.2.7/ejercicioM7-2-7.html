@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.2.7</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Ejercicio M7.2.7</h1>
+      <p class="parrafo">
+        El usuario introduce un año en por teclado y el programa llama a un
+        método que indique el año es bisiesto o no.
+      </p>
+      <hr />
+    </div>
+
+    <div>
+      <p class="datos">
+        <b>Averigua si el año es bisiesto o no</b>
+        <input type="number" id="anio" />
+      </p>
+      <button onClick="resultado()">Mostrar</button>
+      <p class="resultado">
+        <b><span id="resultado"></span></b>
+      </p>
+    </div>
+
+    <script>
+      //Comprobar si es o no bisiesto
+      function bisiesto(anio) {
+        let comprobarBis;
+
+        if (anio % 400 == 0) {
+          comprobarBis = " es bisiesto.";
+        } else if (anio % 4 === 0 && anio % 100 != 0) {
+          comprobarBis = " es bisiesto.";
+        } else {
+          comprobarBis = " No es bisiesto.";
+        }
+        return comprobarBis;
+      }
+
+      //Resultado
+      function resultado() {
+        let anio = Number(document.getElementById("anio").value);
+        let decirAnio = bisiesto(anio);
+        document.getElementById(
+          "resultado"
+        ).innerHTML = `El año ${anio} ${decirAnio}`;
+      }
+    </script>
+  </body>
+</html>
