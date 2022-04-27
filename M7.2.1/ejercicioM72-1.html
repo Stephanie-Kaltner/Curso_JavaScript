@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.2.1</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M7.2.1</h1>
+        <p class="parrafo">Haz un programa que muestre lo siguiente por pantalla:
+            <br>*
+            <br>* *
+            <br>* * *
+            <br>* * * *
+            <br>* * * * *
+            <br> * * * * * *<br>
+            El número de líneas formadas por “*” vendrá dado por un número que el usuario introducirá por teclado.<br>
+            Condición: En todo el código del programa sólo puede haber un *
+            También, a ser posible, <br>no utilices ningún método como <i>repeat() o substring()</i> de la clase String</p>
+    </div>
+    <hr>
+    <div>
+        <p>
+            <label for="num">Indica el número que quieres que se dibuje: </label>
+            <input type="number" id="num" min="0" />
+        </p>
+
+        <button onClick="print()">Imprimir</button>
+        <p class="resultado"><span id="resultado"></span></p>
+    </div>
+
+    <script>
+        function print () {
+            const num = document.getElementById("num").value;
+            let resultado = '';
+            for (let index = 1; index <= num; index++) {
+                resultado += '* ';
+                document.getElementById("resultado").innerHTML += resultado + '<br>';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
