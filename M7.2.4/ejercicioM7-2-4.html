@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.2.4</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Ejercicio M7.2.4</h1>
+      <p class="parrafo">
+        Realizar un programa en el que el usuario introduce un número y el
+        programa llama a un método que devuelve el factorial del número
+        introducido.<br />
+        El factorial de un número n (entero, no negativo) es el producto de
+        todos los números enteros positivos inferiores o iguales a n.
+      </p>
+      <hr />
+    </div>
+
+    <div>
+      <p>
+        Introduzca el número que le retorne el factorial:
+        <input id="number" type="number" />
+      </p>
+      <button onClick="factorial()">Calcular</button>
+      <p id="resultado"></p>
+    </div>
+
+    <script>
+      function factorial() {
+        const numb = document.getElementById("number").value;
+        let total = 1;
+        for (let i = 1; i <= numb; i++) {
+          total = total * i;
+          document.getElementById(
+            "resultado"
+          ).innerHTML = `El factorial del número ${numb} es: ${total}`;
+        }
+      }
+    </script>
+  </body>
+</html>
