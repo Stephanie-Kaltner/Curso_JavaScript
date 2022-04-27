@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M5.4</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M5.4</h1>
+        <p class="parrafo">Tienes que modificar el programa anterior para añadir una nueva funcionalidad: establecer un número máximo de 5 intentos.<br>
+            Si el usuario acierta el número escogido por el programa antes de estos 5 intentos, el programa muestra el siguiente mensaje<br> por pantalla: “Enhorabuena, el número es X y has necesitado Y intentos por acertar”.<br>
+            Si no acierta el número antes de 5 intentos, el programa muestra por pentalla: "¡Has utilizado demasiados intentos! El número es X".</p>
+    </div>
+    <hr>
+    <div>
+        <p style="margin-top: 35px; margin-bottom: 20px;"><b>¡A ver si adivinas el número!</b></p>
+        <button onClick="adivinar()">Adivinar</button>
+        <p id="acertar"></p>
+    </div>
+
+
+    <script>
+        "use strict"
+
+        function adivinar () {
+            console.clear();
+            let numeroRandom = Math.ceil((Math.random() * 10));
+            let numeroUsuario = 0;
+            let numeroIntentos = "";
+
+            do {
+                numeroUsuario = Number(prompt("Elige un número del 1 al 10", ''));
+                if (numeroUsuario != numeroRandom) {
+                    alert("No has acertado, sigue probando");
+                }
+                numeroIntentos++
+                console.log('numero de usuario', numeroUsuario);
+            } while (numeroUsuario != numeroRandom && numeroIntentos < 5)
+            if (numeroUsuario == numeroRandom) {
+                alert(`Enhorabuena, el número es ${numeroRandom} y has necesitado ${numeroIntentos} para acertar`);
+            } else {
+                alert(`Has utilizado demasiados intentos, el número era ${numeroRandom}`);
+            }
+        }
+
+
+        //Generar el random = numeroRandom
+        //usar el do while
+        //intento = 1
+        /* do {
+        preguntar por numeroUsuario
+        si (numeroUsuario != numeroRandom)
+        si no sale: numero incorrecto
+        intento++
+        }while (numeroUsuario != numeroRandom && intento<5);
+        si sale: numero correcto
+        */
+
+    </script>
+</body>
+
+</html>
