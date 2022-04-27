@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M4 Extra 2</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M4 Extra 2</h1>
+        <p>Este ejercicio NO es obligatorio, sólo tienes que hacerlo si te sobra tiempo y has terminado el resto de ejercicios más rápido que el resto de la clase.<br /> Pide al usuario un número entre 0 y 99 y muéstralo escrito en letras.
+        </p>
+    </div>
+    <hr />
+
+    <div>
+        <label for="num"></label>
+        <p class="datos">
+            Escribe un número <input type="number" id="num" min="0" max="99" />
+        </p>
+        <p id="decena"></p>
+        <p id="unidad"></p>
+        <button onClick="processForm()">convertir</button>
+        <p class="resultado">
+            El numero en letras es: <span type="text" id="letras"></span>
+        </p>
+    </div>
+
+    <script>
+        const unidades = {
+            0: "cero",
+            1: "un",
+            2: "dos",
+            3: "tres",
+            4: "cuatro",
+            5: "cinco",
+            6: "seis",
+            7: "siete",
+            8: "ocho",
+            9: "nueve",
+        };
+        const decenas = {
+            1: "dieci",
+            2: "venti",
+            3: "treti",
+            4: "cuarenti",
+            5: "cincuenti",
+            6: "sesenti",
+            7: "setenti",
+            8: "ochenti",
+            9: "noventi",
+        };
+
+        const especiales = {
+            10: "diez",
+            11: "once",
+            12: "doce",
+            13: "trece",
+            14: "catorce",
+            15: "quince",
+            20: "veinte",
+            30: "treinta",
+            40: "cuarenta",
+            50: "cincuenta",
+            60: "sesenta",
+            70: "setenta",
+            80: "ochenta",
+            90: "noventa",
+        };
+
+        function processForm () {
+            const numberValue = document.getElementById("num").value;
+            if (especiales[numberValue]) {
+                document.getElementById("letras").innerHTML = especiales[numberValue];
+            } else if (unidades[numberValue]) {
+                document.getElementById("letras").innerHTML = especiales[numberValue];
+            } else {
+                // convierto en nro a string y saco el primer caracter y el segundo por separado
+                const firstNumber = numberValue.toString()[0];
+                const lastNumber = numberValue.toString()[1];
+                document.getElementById("letras").innerHTML =
+                    decenas[firstNumber] + unidades[lastNumber];
+            }
+        }
+
+    </script>
+</body>
+
+</html>
