@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <title>Carrusel de fotografías</title>
+</head>
+
+<body>
+    <h1>Fotografías de viajes</h1>
+    <<div class="carrusel">
+        <button onClick="retroceder()"><img style="height: 10px;" src="./img/izq.png" title="retroceder"></button>
+        <img id="imagen">
+        <button onClick="avanzar()"><img style="height: 10px;" src="./img/der.png" title="avanzar"></button>
+        </div>
+
+        <div class="nomImg">
+            <span id="nombre"></span>
+        </div>
+        <script src="./js/carrusel.js"></script>
+        <script>
+            mostrarImagen(0);
+            mostrarNombre(0);
+
+        </script>
+</body>
+
+</html>

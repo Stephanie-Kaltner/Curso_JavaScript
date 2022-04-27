@@ -1,0 +1,53 @@
+body{
+    padding: 20px 0 0 40px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.carrusel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.nomImg {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+#imagen {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+button {
+    background: #22A0B8;
+    color: #ffff;
+    border-color: #22A0B8;
+    padding: 6px 12px;
+    border-radius: 8px;
+    height: 35px;
+    margin-top: 170px;
+    cursor: pointer;
+}
+
+.botones {
+    margin-top: -130px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
