@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.1.8</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M7.1.8</h1>
+        <p class="parrafo">Crea un programa donde el usuario introduzca una temperatura en ºC y se muestre por pantalla la conversión en ºFahrenheit
+            Fórmula
+            (32 °C x 9/5) + 32 = 89,6 °F</p>
+    </div>
+    <hr>
+    <div>
+        <p class="datos">
+            <label for="temp">Itroduzca la temperatura en ºC: </label>
+            <input type="number" id="temp" min="0">
+        </p>
+
+        <p><input style="background: #22A0B8; color: #ffff; border-color: #22A0B8; padding: 5px 20px; border-radius: 6px;" type="button" onClick="calcular()" value="Crear"></p>
+
+        <p class="resultado"><span id="resultado"></span></p>
+    </div>
+    <script>
+        function calcular () {
+            const temperatura = document.getElementById("temp").value;
+            const resultado = (temperatura * 9 / 5) + 32;
+            document.getElementById('resultado').innerHTML = 'La temperatura es: ' + resultado + ' ºF';
+        }
+
+    </script>
+</body>
+
+</html>
