@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M5.1</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M5.1</h1>
+        <p class="parrafo">Realizar un programa con una caja de texto y un botón. El usuario introduce el número de palabras<br> que desea introducir en el campo de texto, al hacer clic en el botón aparecen tantos “prompts” como<br> el número de palabras que ha dicho el usuario que quería introducir. Las palabras se guardan en un <br>array y una vez que han sido todas introducidas, se muestran por pantalla.</p>
+    </div>
+    <hr>
+
+    <p class="datos">Número de palabras que quieres introducir: <input type="number" id="numbers" min="0" /></p>
+    <button onClick="introducir()">Indicar palabras</button>
+
+    <p class="resultado">Palabras introducidas: <sapn type="text" id="resultado"></sapn>
+    </p>
+    <script>
+        //bucle for
+        //Definir variable palabraLeida y arrayPalabras
+        function introducir () {
+            let numbers = Number(document.getElementById("numbers").value);
+            let resultado = "";
+            let palabras = "";
+            let arrayNumb = [];
+
+            for (i = 0; i < numbers; i++) {
+                let palabra1 = prompt("Escriba una palabra: ");
+                arrayNumb.push(palabra1);
+            }
+            //Introducir números de palabras
+            for (let i = 0; i < arrayNumb.length; i++) {
+                palabras = palabras + ' ' + arrayNumb[i]
+            }
+            //Imprimir arrayPalabras
+            document.getElementById("resultado").innerHTML = palabras;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
