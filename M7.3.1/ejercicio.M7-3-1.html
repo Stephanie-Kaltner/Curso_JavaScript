@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.3.1</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M7.3.1</h1>
+        <p class="parrafo">Realizar un programa que tenga un menú donde se le mostrarán 4 opciones al usuario por pantalla:
+            <ul>
+                <li>1 - Cuadrado</li>
+                <li>2 - Triángulo</li>
+                <li>3 - Rectángulo</li>
+                <li>4 - Círculo</li>
+                <li>5. Salir del programa</li>
+            </ul>
+            Según la opción escogida deberá introducir unos u otros datos para que el programa muestre por pantalla el área (el valor) del polígono escogido.</p>
+    </div>
+    <hr>
+    <div>
+        <h3>Calcular las áreas</h3>
+        <select class="operadores" name="opciones" id="opciones">
+            <option>select</option>
+            <option value="cuadrado" name="cuadrado">Cuadrado</option>
+            <option value="triangulo" name="triangulo">Triángulo</option>
+            <option value="rectangulo" name="rectangulo">Rectángulo</option>
+            <option value="circulo" name="circulo">Círculo</option>
+        </select>
+        <br>
+        <button style="margin-top: 10px;" onClick="mostrar()">calcular</button>
+        <p id="result"></p>
+    </div>
+
+    <script src="./js/calcular.js"></script>
+</body>
+
+</html>
