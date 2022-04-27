@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.1.7</title>
+</head>
+
+<body style="padding: 20px 0 0 30px;">
+    <div>
+        <h1><b>Ejercicio M7.1.7</b></h1>
+        <p>Hacer un programa en el que el usuario introduce por pantalla un carácter y un número.<br> El programa imprime por pantalla un cuadrado con el tamaño y el carácter introducidos por el usuario.</p>
+    </div>
+    <hr>
+    <div style="margin-top: 30px;">
+        <p class="datos">
+            <label for="caracter">introduce un carácter:</label>
+            <input type="text" id="caracter">
+        </p>
+        <p class="datos1">
+            <label for="numero">introduce un número:</label>
+            <input type="number" id="numero">
+        </p>
+        <button onClick="crear()">Crear</button>
+        <p><b><span id="resultado"></span></b></p>
+    </div>
+
+    <script>
+        //Crear una funcion para crear un cuadrado
+        function crear () {
+            //Leer el caracter
+            const caracter = document.getElementById("caracter").value;
+            //Leer el numero = nº entero parseInt()
+            const numero = document.getElementById("numero").value;
+            //variable para concatenar cuadrado = "";
+            let cuadrado = "";
+            //Hacer un bucle (desde = for) 1 = (hasta) altura ++1;
+            for (let fila = 1; fila <= numero; fila++) {
+                for (let columna = 1; columna <= numero; columna++) {
+                    cuadrado += caracter;
+                }
+                cuadrado += "<br>";
+            }
+            document.getElementById("resultado").innerHTML = cuadrado;
+        }
+
+    </script>
+
+</body>
+
+</html>
