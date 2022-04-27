@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.1.4</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M7.1.4</h1>
+        <p class="parrafo">El usuario debe introducir dos números, el programa devolverá “Uno de los dos números es negativo”, sólo si uno de los dos números es negativo.</p>
+    </div>
+    <hr>
+    <div>
+        <p class="datos">Escriba un número: <input type="number" id="numb1" /></p>
+        <p class="datos1">Escriba otro número: <input type="number" id="numb2" /></p>
+        <button onClick="calcular()">Calcular negativos</button>
+        <p class="resultado">Resultado: <span id="resultado"></span></p>
+    </div>
+
+
+    <script>
+        function calcular () {
+            const num1 = document.getElementById("numb1").value;
+            const num2 = document.getElementById("numb2").value;
+            // en una operación matemática de multiplicación
+            // si la cantidad de elementos negativos es par el resultado lo será
+            // caso contrario el resultado es negativo
+            const esNegativo = Number(num1) * Number(num2) < 0;
+            if (esNegativo) {
+                document.getElementById('resultado').innerHTML = 'Uno de los dos números es negativo';
+            } else {
+                document.getElementById('resultado').innerHTML = '';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
