@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio M4.4</title>
+</head>
+
+<body style="padding: 20px 0 0 30px;">
+    <div>
+        <h1><b>Ejercicio M4.4</b></h1>
+        <p>El usuario introduce un mes por pantalla y mediante un switch con los 12 meses del año, el programa calcula los días del mes y muestra lo siguiente:
+            <li>Ejemplo: Si el número introducido es 1, entonces debe aparecer por pantalla: “El mes de enero tiene 31 días”</li>
+        </p>
+    </div>
+    <hr>
+    <div style="margin-top: 30px;">
+        <p style="font-size: 18px; font-weight: 600;">Elige un mes para saber cuantos días tiene</p>
+        <label for="mes"></label>
+        <!--for ([expresion-inicial]; [condicion]; [expresion-final])sentencia-->
+        <select name="mes" id="mes">
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+        </select>
+    </div>
+
+    <p><button style="background: #22A0B8; color: #ffff; border-color: #22A0B8;" onClick="calcular()">Calcular días</button></p>
+    <p id="resultado">Resultado:</p>
+
+    <script>
+        function calcular () {
+            // el query selector espera una expression mas un wildcard, por ejemplo si agregar # busca por id
+            // asique corrigiendo la query funciona
+            let mes = document.querySelector("#mes").value;
+            let numeroDias = "";
+
+            switch (mes) {
+                case "Enero":
+                case "Marzo":
+                case "Mayo":
+                case "Julio":
+                case "Agosto":
+                case "Octubre":
+                case "Diciembre":
+                    numeroDias = 31;
+                    break;
+                case "Febrero":
+                    numeroDias: 28;
+                    break;
+                case "Abril":
+                case "Junio":
+                case "Septiembre":
+                case "Noviembre":
+                    numeroDias = 30;
+                    break;
+            }
+            // pasa usar el reemplazo de variables en un string hay que usar `` en vez de cpomillas simples ''
+            document.getElementById("resultado").innerHTML = `Resultado: El mes de ${mes} tiene ${numeroDias} días`;
+        }
+
+    </script>
+</body>
+
+
+
+<!--Leo mes
+switch (mes){
+caso 1:
+mesLetra="enero"
+numeroDias=31
+etc...
+
+}
+mensaje = 'El mes de &{mesLetra} té &{numeroDias} dias'-->
+
+</html>
