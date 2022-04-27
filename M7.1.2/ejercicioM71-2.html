@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.1.2</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M7.1.2</h1>
+        <p class="parrafo">Un profesor quiere calcular las medias de las notas de toda la clase. Crea una aplicación donde el usuario introducirá un número por pantalla<br> (el número corresponde al número de notas que desea introducir) y el programa le pedirá que introduzca las notas de todos los alumnos.<br>
+            Una vez las notas han sido introducidas, el programa devuelve lo siguiente:
+            <ul>
+                <li>Si la nota media es menor que 5: <b>"La nota media de la clase está suspendida. Los alumnos deberían preguntar sus dudas y trabajar más"</b>.</li>
+                <li>Si la nota es inferior a 7: <b>"La nota media de la clase es buena, pero los alumnos deberían mejorar su trabajo personal"</b>.</li>
+                <li>Para el resto de casos, el mensaje debe ser: <b>"¡Enhorabuena! La nota media de la clase se corresponde con el esfuerzo realizado"</b>.</li>
+            </ul>
+            <i>*Las notas deben estar comprendidas entre 0 y 10.</i>
+        </p>
+    </div>
+    <hr>
+
+    <!--INTRODUCIR LAS NOTAS DE LOS ALUMNOS-->
+    <p>Introduzca la cantidad de alumnos <input type="number" id="numbers" /></p>
+
+    <button onClick="promedio()"> Promedio </button>
+
+    <p class="resultado">El promedio es: <span id="promedio"></span></p>
+    <p id="mensaje"></p>
+
+    <script>
+        function promedio () {
+            let arrayNumb = [];
+            //Definir las variables
+            let numbers = Number(document.getElementById("numbers").value);
+            /*let notas = document.getElementById("notas").value;*/
+
+            //Pedir que introduzcan las notas (un alert)
+            for (i = 0; i < numbers; i++) {
+                let notas = prompt("Escriba las notas de los alumnos");
+                arrayNumb.push(Number(notas));
+            }
+            if (numbers != arrayNumb.length) {
+                alert('Faltan notas por ingresar')
+            } else {
+                let sumatoriaNotas = 0
+                arrayNumb.forEach((elem) => {
+                    sumatoriaNotas = sumatoriaNotas + elem
+                });
+                //Calcular el promedio
+                let promedio = sumatoriaNotas / numbers;
+                //Si la nota es menor que 5 suspenden
+                if (promedio <= 5) {
+                    document.getElementById("mensaje").innerHTML = "<b>La nota media de la clase está suspendida. Los alumnos deberían preguntar sus dudas y trabajar más</b>";
+                    //Y si la nota es mayor que 5 o menor que 7 seguir trabajando
+                } else if (promedio >= 5 && promedio <= 7) {
+                    document.getElementById("mensaje").innerHTML = "<b>La nota media de la clase es buena, pero los alumnos deberían mejorar su trabajo personal</b>";
+                    //Si la nota es mayor que 7 bien hecho
+                } else {
+                    document.getElementById("mensaje").innerHTML = "<b>¡Enhorabuena! La nota media de la clase se corresponde con el esfuerzo realizado</b>";
+                }
+                //Mostrar el promedio obtenido
+                document.getElementById("promedio").innerHTML = promedio;
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
