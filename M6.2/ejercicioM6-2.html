@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M6.2</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Ejercicio M6.2</h1>
+      <p class="parrafo">
+        Este programa calcula la edad media de un número de personas introducido
+        por teclado.<br />
+        Se debe crear una función que se encargue de pedir las edades al usuario
+        y de calcular la edad media.<br />
+        La función recibirá por parámetro el nº de personas a las que debe pedir
+        la edad.<br />
+        La edad de las personas sólo será válida si está comprendida entre 0 y
+        120 años.<br />
+        La media de las edades introducidas debe devolverse por la función
+        (return).
+      </p>
+      <hr />
+    </div>
+    <!--input type "numPersonas"ex: 6 => onClick="media('numPersonas')"-->
+    <p>
+      Introduzca la cantidad de personas para promediar sus edades
+      <input type="number" id="persons" />
+    </p>
+    <p>Edades cargadas :<span id="edades"></span></p>
+    <p class="resultado">El promedio es: <span id="mostrar"></span></p>
+    <button onClick="agregarEdades()">Agregar una edad</button>
+    <script>
+      const edades = [];
+      function agregarEdades() {
+        const cantidadEdades = document.getElementById("persons").value;
+        cargarEdades(cantidadEdades);
+      }
+      function cargarEdades(cant) {
+        if (edades.length < cant) {
+          let edad = prompt("Ingrese una edad");
+
+          if (edad >= 0 && edad <= 120) {
+            edades.push(edad);
+            document.getElementById("edades").innerHTML = edades.toString();
+            cargarEdades(cant);
+          } else {
+            alert("edad invalida");
+          }
+        } else {
+          promedio(cant);
+        }
+      }
+
+      function promedio(cant) {
+        let edadSum = 0;
+        edades.forEach((edad) => {
+          edadSum += Number(edad);
+        });
+
+        document.getElementById("mostrar").innerHTML = (
+          edadSum / cant
+        ).toString();
+      }
+    </script>
+  </body>
+</html>
