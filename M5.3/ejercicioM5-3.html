@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M5.3</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M5.3</h1>
+        <p class="parrafo">Esta línea de código: <b><i>Math.ceil((Math.random() * 10));</i></b> devuelve un número entre el 0 y el 10 de forma aleatoria.<br>
+            El ejercicio consiste en que el usuario debe adivinar el número escogido aleatoriamente por el programa.<br>
+            El programa, pide números al usuario hasta que éste acierte el número aleatorio generado por el programa.<br>
+            Una vez el usuario ha adivinado el número, se mostrará por pantalla el siguiente mensaje: <b><i>"Enhorabuena, el número era X"</i></b></p>
+    </div>
+    <hr>
+    <div style="margin-top: 30px;">
+        <p style="font-size: 20px;"><b>¡A ver si adivinas el número!</b></p>
+        <button onClick="adivinar()">Adivinar</button>
+    </div>
+
+
+    <script>
+        "use strict"
+
+        function adivinar () {
+            console.clear();
+            let numeroRandom = Math.ceil((Math.random() * 10));
+            let numeroUsuario = 0;
+
+            do {
+                numeroUsuario = Number(prompt("Elige un número del 1 al 10", ''));
+                if (numeroUsuario != numeroRandom) {
+                    alert("No has acertado, sigue probando");
+                }
+                console.log('numero de usuario', numeroUsuario);
+            } while (numeroUsuario != numeroRandom);
+
+            alert("Enhorabuena, has adivinado");
+        }
+
+        //Generar el random = numeroRandom
+        //usar el do while
+
+        /* do {
+        preguntar por numeroUsuario
+        si no sale: numero incorrecto
+        }while (numeroRandom != numeroRandom);
+        si sale: numero correcto
+        */
+
+    </script>
+</body>
+
+</html>
