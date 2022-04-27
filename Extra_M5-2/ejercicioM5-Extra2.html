@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M5 Extra 2</title>
+</head>
+
+<body>
+    <div>
+        <h1><b>Ejercicio M5 Extra 2</b></h1>
+        <p>Realiza un programa que pinte la letra L por pantalla hecha con asteriscos.<br>
+            <ul>
+                <li>El programa pedirá la altura.</li>
+                <li>El mástil horizontal de la L tendrá una longitud de la mitad (división entera entre 2) de la altura más uno.</li>
+            </ul>
+        </p>
+        <p>
+            <ul>
+                <li>Ejemplo: Introduzca la altura de la L : 5</li>
+                <li>La base será la división del número entre 2: (5/2) + 1 = 3</li>
+            </ul>
+        </p>
+    </div>
+    <hr>
+    <div>
+        <p>
+            <label for="altura">Indica la altura de la L (1 - 10): </label>
+            <input type="number" id="altura">
+        </p>
+        <button onClick="crear()">Crear</button>
+        <p><span id="y"></span><span id="x"></span></p>
+    </div>
+
+    <script>
+        //Crear una funcion para crear con asteriscos una L
+        function crear () {
+            //Leer la altura = nº entero parseInt()
+            let altura = parseInt(document.getElementById("altura").value);
+            //Leer la base = nº entero (altura/2) + 1
+            let base = parseInt(altura / 2) + 1;
+            let alturaValida = (altura < 1 || altura > 10) ? false : true;
+            //variable para concatenar L = "";
+            let y = "";
+            let x = "";
+            //Hacer un bucle (desde = for) 1 = (hasta) altura ++1;
+            if (!alturaValida) {
+                alert("Escriba una altura entre 1 a 10");
+            } else {
+                //Bucle de la Altura
+                for (let index = 1; index < altura; index++) {
+
+                    y += "* <br>";
+
+                }
+                //Bucle de la base
+                for (let j = 1; j <= base; j++) {
+                    x += "* ";
+                }
+            }
+
+            document.getElementById("y").innerHTML = y;
+            document.getElementById("x").innerHTML = x;
+        }
+
+    </script>
+
+</body>
+
+</html>
