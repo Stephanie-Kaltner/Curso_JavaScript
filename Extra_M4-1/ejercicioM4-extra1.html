@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M4 - Extra 1</title>
+</head>
+
+<body style="padding: 20px 0 0 30px;">
+    <div>
+        <h1>Ejercicio M4 - Extra 1</h1>
+        <p>
+            Este ejercicio NO es obligatorio, sólo tienes que hacerlo si te sobra tiempo y
+            has terminado el resto de ejercicios más rápido que el resto de la clase.<br>
+            <ul>
+                <li>Haz un programa que pregunte al usuario dos números enteros al que llamarás dividendo y divisor respectivamente.</li>
+                <li>El divisor deberá estar comprendido entre 2 y 7.</li>
+                <li>De lo contrario, el programa deberá mostrar un mensaje de error.</li>
+                <li>Si el divisor es correcto (2-7) muestra en pantalla si el dividendo es múltiplo del divisor, o no.</li>
+            </ul>
+        </p>
+    </div>
+    <hr>
+    <div>
+        <p class="datos">Escribe un número: <input type="number" id="number" /></p>
+        <button onClick="convertir()">Convertir</button>
+        <p>Respuesta: <span id="respuesta"></span></p>
+    </div>
+
+
+    <script>
+        //Preguntar por dos numeros enteros => let number =""
+        function convertir () {
+            let number = Number(document.getElementById("number").value);
+            let divisor = ["2", "3", "5", "7"];
+            let dividendo = number;
+
+            if (dividendo % 2 === 0 || dividendo % 3 === 0 || dividendo % 5 === 0 || dividendo % 7 === 0) {
+                document.getElementById("respuesta").innerHTML = number + " Es múltiplo del divisor";
+            } else if (dividendo != divisor) {
+                document.getElementById("respuesta").innerHTML = number + " No es múltiplo del divisor";
+            } else {
+                document.getElementById("respuesta").innerHTML = "Error";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
