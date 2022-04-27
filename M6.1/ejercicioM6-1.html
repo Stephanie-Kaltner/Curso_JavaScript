@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M6.1</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M6.1</h1>
+        <p class="parrafo">Calculadora arcaica. El programa pide al usuario que introduzca dos números y la operación que desea realizar.<br>
+            Cada operación (suma, resta, multiplicación, división y módulo) estará programada en una función distinta.</p>
+        <hr>
+    </div>
+
+    <div class="datos">
+        <p>Introduzca un número <input id="number1" type="number" /></p>
+        <p>Introduzca otro número <input id="number2" type="number" /> </p>
+    </div>
+
+    <select class="operadores" name="operador" id="operador">
+        <option>select</option>
+        <option style="text-align: center;" value="suma">+</option>
+        <option style="text-align: center;" value="resta">-</option>
+        <option style="text-align: center;" value="multi">*</option>
+        <option style="text-align: center;" value="div">/</option>
+        <option style="text-align: center;" value="modulo">%</option>
+    </select>
+    <br>
+    <button style="margin-top: 10px;" onClick="mostrar()">Mostrar</button>
+    <p>Respuesta: <span id="resultado"></span></p>
+
+    <script>
+        function mostrar () {
+            let number1 = Number(document.getElementById("number1").value);
+            let number2 = Number(document.getElementById("number2").value);
+            let operador = document.getElementById("operador").value;
+            let mensj = "";
+
+            switch (operador) {
+                case 'suma':
+                    mensj = number1 + number2;
+                    break;
+                case 'resta':
+                    mensj = number1 - number2;
+                    break;
+                case 'multi':
+                    mensj = number1 * number2;
+                    break;
+                case 'div':
+                    mensj = number1 / number2;
+                    break;
+                case 'modulo':
+                    mensj = number1 % number2;
+                    break;
+            }
+            document.getElementById("resultado").innerHTML = mensj;
+        }
+
+    </script>
+
+</body>
+
+</html>
