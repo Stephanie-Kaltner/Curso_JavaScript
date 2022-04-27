@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M3.1</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M3.1</h1>
+        <p class="parrafo">Hacer un programa que le solicite al usuario mediante el prompt: El nombre, el apellido y la edad del usuario. Una vez que el usuario haya terminado de introducir los datos, éstos deben mostrarse por consola, con un popup y mediante getElementById().</p>
+    </div>
+    <hr>
+    <div class="datos">
+        <p id="name">Nombre:</p>
+        <p id="lastname">Apellido:</p>
+        <p id="age">Edad:</p>
+    </div>
+    <button onClick="comenzar()">comenzar</button>
+
+    <script>
+        function comenzar () {
+            let name = "";
+            let lastname = "";
+            let age = "";
+            name = prompt("Nombre:", 'Stephanie');
+            lastname = prompt('Apellido:', 'Kaltner');
+            age = prompt('Edad:', '31');
+
+            alert('Tus datos son:' + "\n" + name + "\n" + lastname + "\n" + age);
+
+            console.log("Nombre", name, "Apellido", lastname, "Edad", age);
+
+            document.getElementById('name').innerHTML = "Nombre: " + name;
+            document.getElementById('lastname').innerHTML = "Apellido: " + lastname;
+            document.getElementById('age').innerHTML = "Edad: " + age;
+        }
+
+    </script>
+</body>
+
+</html>
