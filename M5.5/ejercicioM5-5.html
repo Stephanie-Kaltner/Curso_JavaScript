@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M5.5</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M5.5</h1>
+        <p class="parrafo">Tienes que modificar el programa de las becas (ahora el programa sólo debe poder dar 5 becas).<br>
+            El programa irá pidiendo los datos de los alumnos hasta que se den estas 5 becas. Una vez que el programa haya asignado las 5 becas se mostrará por pantalla los nombres de los 5 alumnos que tienen beca.
+        </p>
+    </div>
+    <hr>
+
+    <div id="ejercicio">
+        <label id="form">
+            <p>Nombre y apellido: <input id="nombre" type="text" size="60"></p>
+            <p>Edad: <input id="edad" type="number" size="10"></p>
+
+            <p>¿Tienes título universitario?
+                <select id="titulo" name="titulo">
+                    <option disable selected value> -- selecciona -- </option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </p>
+
+            <p>¿Estás en el paro?
+                <select id="paro" name="paro">
+                    <option disable selected value> -- selecciona -- </option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </p>
+
+            <button onClick="beca()">Resultado</button>
+            <p>Resultado de la beca: <span id="respuesta"></span></p>
+        </label>
+    </div>
+
+
+    <script>
+        function beca () {
+            //Rellenar los datos de 5 alumnos
+            let nombre = document.getElementById("nombre").value;
+            let edad = Number(document.getElementById("edad").value);
+            let selec1 = document.getElementById("titulo");
+            let titulo = selec1.options[selec1.selectedIndex].value;
+            let selec2 = document.getElementById("paro");
+            let paro = selec2.options[selec2.selectedIndex].value;
+
+            //valiables
+            let arrayNombres = [];
+            let respuesta = "";
+
+            //Guardar los datos
+            if (edad >= 18) {
+                if (titulo || paro) {
+                    respuesta = " tienes beca";
+                } else {
+                    respuesta = " no tienes beca";
+                }
+            } else if (edad < 18 && edad >= 16 && paro) {
+                respuesta = " tienes beca";
+            } else {
+                respuesta = " no tienes beca";
+            }
+            //Mostrar los nombres de los 5 alumnos
+            document.getElementById("respuesta").innerHTML = nombre + respuesta;
+
+        }
+        //Mostrar los datos
+
+    </script>
+</body>
+
+</html>
