@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Ejercicio M7.2.2</title>
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio M7.2.2</h1>
+        <p class="parrafo">Haz un programa que muestre lo siguiente por pantalla:
+            <br>* * * * * *
+            <br>* * * * *
+            <br>* * * *
+            <br>* * *
+            <br>* *
+            <br>*<br>
+            El número de líneas formadas por “*” vendrá dado por un número que el usuario introducirá por teclado.<br>
+            Condición: En todo el código del programa sólo puede haber un *
+            También, a ser posible, no utilices ningún método como <i>repeat() o substring()</i> de la clase String.</p>
+    </div>
+    <hr>
+    <div>
+        <p class="datos">
+            <label for="num">Indica el número que quieres que se dibuje: </label>
+            <input type="number" id="num" min="0">
+        </p>
+
+        <button onClick="printTriangle()">Imprimir</button>
+
+        <p><b><span id="resultado"></span></b></p>
+    </div>
+
+    <script>
+        function printTriangle () {
+            const num = document.getElementById("num").value;
+            let resultado = '';
+            for (let j = num - 1; j > 0; j--) {
+                resultado += printAsterix(j);
+
+            }
+            document.getElementById("resultado").innerHTML = resultado;
+
+        }
+        // numnero=5 => *****<br>
+        function printAsterix (numero) {
+            let linea = '';
+            for (let index = 0; index < numero; index++) {
+                linea += '* '
+
+            }
+
+            return linea + '<br>';
+        }
+
+    </script>
+</body>
+
+</html>
